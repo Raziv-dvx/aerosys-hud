@@ -1,0 +1,58 @@
+{
+  "name": "aerosys-hud-pro",
+  "productName": "AeroSys HUD",
+  "version": "1.1.0",
+  "description": "Advanced System Monitoring Suite - A beautiful, premium system monitoring application for Windows",
+  "author": {
+    "name": "Raziv-dvx",
+    "url": "https://github.com/Raziv-dvx"
+  },
+  "homepage": "https://github.com/Raziv-dvx",
+  "private": true,
+  "main": "electron/main.cjs",
+  "type": "module",
+  "scripts": {
+    "dev": "concurrently -k \"vite\" \"npm run electron\"",
+    "electron": "wait-on tcp:5173 && cross-env NODE_ENV=development electron .",
+    "build": "vite build && electron-builder",
+    "lint": "eslint .",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "active-win": "^8.2.1",
+    "axios": "^1.13.2",
+    "clsx": "^2.1.1",
+    "electron-store": "^6.0.1",
+    "framer-motion": "^12.23.24",
+    "loudness": "^0.4.2",
+    "lucide-react": "^0.554.0",
+    "ping": "^1.0.0",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0",
+    "react-router-dom": "^7.9.6",
+    "recharts": "^3.5.0",
+    "systeminformation": "^5.27.11",
+    "tailwind-merge": "^3.4.0"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.39.1",
+    "@types/react": "^19.2.5",
+    "@types/react-dom": "^19.2.3",
+    "@vitejs/plugin-react": "^5.1.1",
+    "autoprefixer": "^10.4.22",
+    "concurrently": "^9.2.1",
+    "cross-env": "^10.1.0",
+    "electron": "^39.2.3",
+    "electron-builder": "^26.0.12",
+    "eslint": "^9.39.1",
+    "eslint-plugin-react-hooks": "^7.0.1",
+    "eslint-plugin-react-refresh": "^0.4.24",
+    "globals": "^16.5.0",
+    "png-to-ico": "^3.0.1",
+    "postcss": "^8.5.6",
+    "tailwindcss": "^3.4.17",
+    "to-ico": "^1.1.5",
+    "vite": "^7.2.4",
+    "wait-on": "^9.0.3"
+  }
+}

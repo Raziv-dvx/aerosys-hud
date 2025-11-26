@@ -1,0 +1,55 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# Dependencies
+node_modules
+
+# Build outputs
+dist
+dist-electron
+dist-ssr
+build
+*.local
+
+# Electron build artifacts
+*.exe
+*.dmg
+*.AppImage
+*.deb
+*.rpm
+*.snap
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# OS files
+Thumbs.db
+.DS_Store
+
+# Temporary files
+*.tmp
+*.temp
+.cache
+
+# Scripts (if you created any temporary ones)
+scripts/create-ico.cjs
+scripts/create-ico.js
