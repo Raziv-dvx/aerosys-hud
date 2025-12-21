@@ -6,7 +6,7 @@
 
 **Advanced System Monitoring Suite** - A beautiful, premium system monitoring application for Windows built with Electron and React.
 
-![AeroSys HUD Screenshot](public/icon.png)
+![AeroSys HUD Screenshot](public/banner.png)
 
 ---
 
