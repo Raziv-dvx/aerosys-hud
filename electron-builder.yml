@@ -1,0 +1,35 @@
+appId: com.aerosys.hudpro
+productName: AeroSys HUD
+copyright: Copyright © 2025 Raziv-dvx
+npmRebuild: false
+buildDependenciesFromSource: false
+
+directories:
+  output: dist-electron
+
+files:
+  - dist/**/*
+  - electron/**/*
+  - package.json
+  - node_modules/**/*
+
+win:
+  target: 
+    - target: nsis
+      arch:
+        - x64
+  icon: public/icon.png
+  artifactName: ${productName} Setup ${version}.${ext}
+  forceCodeSigning: false
+
+nsis:
+  oneClick: false
+  perMachine: false
+  allowElevation: true
+  allowToChangeInstallationDirectory: true
+  createDesktopShortcut: always
+  createStartMenuShortcut: true
+  shortcutName: AeroSys HUD
+  runAfterFinish: true
+  deleteAppDataOnUninstall: true
+  license: LICENSE.txt

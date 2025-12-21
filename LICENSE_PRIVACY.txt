@@ -1,0 +1,164 @@
+Privacy Policy for AeroSys HUD
+
+**Effective Date:** November 26, 2025
+
+## Introduction
+
+AeroSys HUD ("the Application") is an open-source system monitoring application committed to protecting your privacy. This Privacy Policy explains how we collect, use, and safeguard information when you use our application.
+
+## Open Source Nature
+
+This Application is open source and available on GitHub. The source code is publicly available for:
+- Educational purposes
+- Personal modifications
+- Security auditing
+- Learning and improvement
+
+## Information We Collect
+
+### System Information (Local Only)
+The Application collects the following system information **locally on your device**:
+
+**Hardware Metrics:**
+- CPU usage, temperature, clock speeds, and specifications
+- Memory (RAM) usage, channels, and specifications
+- GPU usage, temperature, clock speeds, and VRAM
+- Storage/disk usage, health (SMART), and I/O statistics
+- Network adapter information and usage statistics
+- Battery status, wear level, and power consumption
+
+**System Information:**
+- Operating system details and version
+- Active window titles (for monitoring purposes)
+- Audio output volume levels
+- Screen brightness levels
+- System uptime and health scores
+
+### Data Storage and Privacy
+
+**IMPORTANT - All Data is Local:**
+- ✅ **100% Local Storage** - All collected data stays on YOUR device
+- ✅ **No Cloud Sync** - Nothing is uploaded to external servers
+- ✅ **No Telemetry** - We don't track your usage or collect analytics
+- ✅ **No Ads** - No advertising or marketing purposes
+- ✅ **No Third-Party Sharing** - Your data is never shared
+
+### Network Requests
+
+The Application makes **minimal** network requests:
+
+1. **Public IP Detection** (Optional)
+   - Uses ipify.org API to display your public IP address
+   - Only your IP address is sent to ipify.org
+   - No personal or system data is transmitted
+
+2. **Ping Tests** (Optional)
+   - Sends ping requests to your gateway and Google DNS (8.8.8.8)
+   - Used only to measure network latency
+   - No data is transmitted beyond the ping packet
+
+**You can disable network features** if you prefer complete offline operation.
+
+## How We Use Information
+
+The Application uses collected system information **solely** to:
+- Display real-time system performance metrics in the dashboard
+- Track historical usage patterns (stored locally only)
+- Provide system health monitoring and performance insights
+- Calculate load averages and usage statistics
+- Optimize application performance
+
+**We do NOT:**
+- Send data to external servers (except optional IP detection)
+- Use your data for advertising or marketing
+- Share data with third parties
+- Track your behavior or usage patterns remotely
+- Collect personally identifiable information (PII)
+
+## Data Retention
+
+- **Network Usage Statistics:** Daily and monthly totals stored locally in application settings
+- **Historical Data:** Load averages and usage history retained in memory during runtime
+- **Persistent Storage:** Minimal settings stored in local configuration files
+- **Data Deletion:** All data is automatically deleted when you uninstall the application
+
+**To manually clear stored data:**
+1. Close the application
+2. Delete the application's configuration folder (location varies by OS)
+3. Or simply uninstall the application
+
+## Third-Party Services
+
+The Application uses **only one** third-party service:
+
+**ipify.org** - Public IP Address Detection
+- Purpose: Display your public IP address in the Network tab
+- Data Sent: Your IP address (automatically sent when accessing the API)
+- Privacy Policy: https://www.ipify.org/
+- Optional: You can use the app without this feature
+
+## Your Rights and Control
+
+You have **full control** over your data:
+
+✅ **View All Data** - Everything collected is displayed in the UI
+✅ **Delete Data** - Uninstall the app to remove all stored data
+✅ **Disable Features** - Turn off network monitoring if desired
+✅ **Inspect Code** - Review the source code on GitHub
+✅ **Modify App** - Customize the app for your needs (personal use only)
+
+## Security
+
+**Local Security:**
+- Data is stored locally using Electron's secure storage mechanisms
+- No encryption is applied to local data (it's on your device)
+- Standard file system permissions protect stored data
+
+**Network Security:**
+- HTTPS is used for all external API requests (ipify.org)
+- No sensitive data is transmitted over the network
+
+**Open Source Security:**
+- Source code is publicly available for security audits
+- Community can review and report security issues
+- Transparent implementation - no hidden data collection
+
+## Children's Privacy
+
+This Application does not knowingly collect information from children under 13. The app is designed for technical users monitoring their own systems.
+
+## Changes to This Privacy Policy
+
+We may update this Privacy Policy from time to time. Changes will be:
+- Reflected in the Application's About section
+- Updated with a new effective date
+- Announced in the changelog
+
+Continued use of the Application after changes constitutes acceptance of the updated Privacy Policy.
+
+## Open Source Transparency
+
+As an open-source project:
+- You can **inspect the code** to verify our privacy claims
+- You can **audit data collection** by reviewing the source
+- You can **contribute improvements** via GitHub pull requests
+- You can **report privacy concerns** via GitHub issues
+
+**GitHub Repository:** https://github.com/Raziv-dvx
+
+## Contact
+
+For questions, concerns, or privacy-related inquiries:
+- **GitHub Issues:** https://github.com/Raziv-dvx/aerosys-hud/issues
+- **GitHub Profile:** https://github.com/Raziv-dvx
+
+## Consent
+
+By installing and using AeroSys HUD, you acknowledge that you have read, understood, and agree to this Privacy Policy.
+
+---
+
+**Last Updated:** November 26, 2025
+**Version:** 1.1.0
+
+Copyright © 2025 Raziv-dvx. Open Source Software.

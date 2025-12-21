@@ -1,0 +1,88 @@
+const { app, BrowserWindow, ipcMain, Tray, Menu, nativeImage } = require('electron');
+const path = require('path');
+const si = require('systeminformation');
+const Store = require('electron-store');
+const ping = require('ping');
+const axios = require('axios');
+const loudness = require('loudness');
+const activeWin = require('active-win');
+
+const store = new Store();
+const isDev = !app.isPackaged;
+
+let mainWindow = null;
+let tray = null;
+
+const PRESETS = {
+    'low': { fast: 5000, medium: 10000, slow: 20000, network: 60000, system: 15000 },
+    'medium': { fast: 2000, medium: 4000, slow: 12000, network: 45000, system: 10000 },
+    'high': { fast: 1000, medium: 2000, slow: 8000, network: 30000, system: 5000 },
+    'realtime': { fast: 500, medium: 1000, slow: 5000, network: 15000, system: 2000 }
+};
+
+const DEFAULT_SETTINGS = {
+    performancePreset: 'medium',
+    refreshRates: PRESETS['medium'],
+    visibleTabs: ['overview', 'memory', 'network', 'changelog', 'about'],
+    showAllTabs: false,
+    startupEnabled: true
+};
+
+let currentSettings = store.get('settings', DEFAULT_SETTINGS);
+
+// Global System Data Object
+let systemData = {
+    cpu: {
+        currentLoad: 0, speed: 0, temp: 0, cores: 0, governor: '',
+        loadAvg: { '1m': 0, '5m': 0, '15m': 0 },
+        throttling: false,
+        power: 0,
+        ppt: 0,
+        voltage: 0,
+        fanSpeed: 0,
+        cache: { l1: 0, l2: 0, l3: 0 }
+    },
+    mem: {
+        active: 0, total: 1, swapused: 0, swaptotal: 0,
+        maxCapacity: 0,
+        channels: 'Unknown',
+        temperature: 0
+    },
+    gpu: { controllers: [] },
+    storage: { fs: [], layout: [], io: [] },
+    network: [],
+    networkInfo: {
+        publicIP: 'Fetching...',
+        localIP: '',
+        ping: { gateway: 0, google: 0 },
+        wifiSignal: 0
+    },
+    networkUsage: {
+        daily: { rx: 0, tx: 0, date: new Date().toDateString() },
+        monthly: { rx: 0, tx: 0, month: new Date().getMonth() }
+    },
+    power: {},
+    thermals: {
+        motherboard: 0,
+        fans: [],
+        acpiZones: []
+    },
+    system: {
+        activeWindow: '',
+        audioVolume: 0,
+        brightness: 0
+    },
+    os: {},
+    health: 100,
+    hudStats: { memory: 0, cpu: 0 }
+};
+
+function updateHUDStats() {
+    const metrics = app.getAppMetrics();
+    const totalMemory = metrics.reduce((sum, m) => sum + (m.memory?.workingSetSize || 0), 0);
+    const totalCPU = metrics.reduce((sum, m) => sum + (m.cpu?.percentCPUUsage || 0), 0);
+    systemData.hudStats = {
+        memory: Math.round(totalMemory / 1024), // MB
+        cpu: Math.round(totalCPU)
+    };
+}

@@ -1,0 +1,4 @@
+{
+    "version": "1.2.0",
+    "changelog": "• Optimization Phase: Dynamic polling for hidden modules\n• Soft Restart: Reconfigure resources without closing the app\n• Auto-Update System: Real-time update notifications\n• Performance Profiles: Low to Real-Time monitoring"
+}
